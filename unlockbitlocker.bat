@@ -8,6 +8,7 @@ for /f %%i in ('type "passwords.txt"') do (
   manage-bde -unlock %DriveLetter%: -password %%i
   if %errorlevel% EQU 0 (
     echo The drive has been successfully unlocked with password %%i
+    echo %%i >> "unlock_password.txt"
     goto :end
   )
 )
