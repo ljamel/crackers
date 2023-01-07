@@ -12,6 +12,23 @@ const char char_set[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
                             'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
                             'U', 'V', 'W', 'X', 'Y', 'Z'};
 
+char * get_disk_password(char *disk) {
+    char *password;
+
+    // Allouer de la mémoire pour le mot de passe
+    password = malloc(MAX_PASS_LENGTH + 1);
+
+    // Obtenir le mot de passe du disque
+    if(disk_get_password(disk, password, MAX_PASS_LENGTH + 1) != 0) {
+        // Libérer la mémoire allouée si l'obtention du mot de passe échoue
+        free(password);
+        return NULL;
+    }
+
+    // Retourner le mot de passe
+    return password;
+}
+
 int unlock_disk_with_password(char *disk, char *pass) {
     char *disk_password;
     int is_unlocked;
