@@ -12,6 +12,23 @@ const char char_set[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
                             'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
                             'U', 'V', 'W', 'X', 'Y', 'Z'};
 
+int unlock_disk_with_password(char *disk, char *pass) {
+    char *disk_password;
+    int is_unlocked;
+
+    // Obtenir le mot de passe du disque
+    disk_password = get_disk_password(disk);
+
+    // Comparer le mot de passe du disque avec le mot de passe fourni
+    is_unlocked = strcmp(disk_password, pass) == 0;
+
+    // Libérer le mot de passe du disque
+    free(disk_password);
+
+    // Retourner le résultat
+    return is_unlocked;
+}
+
 int main(int argc, char **argv)
 {
     char pass[MAX_PASS_LENGTH + 1];
