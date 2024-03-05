@@ -1,6 +1,6 @@
 @echo off
 
-echo Please choose the drive letter you wish to unlock:
+echo Please choose the drive letter you wish to unlock (if type password, not for recovery key):
 set /p DriveLetter=
 
 for /f %%i in ('type "passwords.txt"') do (
