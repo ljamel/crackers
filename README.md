@@ -1,5 +1,5 @@
 # crackers
-cracking système (le script est fournis à des but purement éducatif)
+cracking système (le script est fournis à but purement éducatif)
 
 Pour utiliser ce script, vous devez le compiler et le lier avec une bibliothèque qui implémente la fonction unlock_disk_with_password. Une fois le script compilé et lié, vous pouvez l'exécuter sur le disque que vous souhaitez déverrouiller.
 
